@@ -1,0 +1,57 @@
+"use client"
+
+import Image from "next/image"
+import { useEffect, useState } from "react"
+
+const links = [
+  { href: "#story", label: "Story" },
+  { href: "#menu", label: "Menu" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#visit", label: "Visit" },
+]
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" className="flex items-center gap-3">
+          <Image
+            src="/images/logo.png"
+            alt="ORDER ESPRESSO 로고"
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full"
+          />
+          <span className="hidden text-sm font-medium tracking-[0.2em] text-foreground sm:block">
+            ORDER ESPRESSO
+          </span>
+        </a>
+
+        <nav className="flex items-center gap-6">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors hover:text-accent"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  )
+}

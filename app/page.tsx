@@ -1,16 +1,23 @@
+import { SiteHeader } from "@/components/site-header"
+import { Hero } from "@/components/hero"
+import { Story } from "@/components/story"
+import { MenuSection } from "@/components/menu-section"
+import { Gallery } from "@/components/gallery"
+import { Visit } from "@/components/visit"
+import { SiteFooter } from "@/components/site-footer"
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center sm:items-start sm:text-left">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            order-espresso
-          </h1>
-          <p className="max-w-md text-lg text-muted-foreground">
-            To get started, send a prompt or modify this page directly.
-          </p>
-        </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Story />
+        <MenuSection />
+        <Gallery />
+        <Visit />
       </main>
-    </div>
-  );
+      <SiteFooter />
+    </>
+  )
 }
