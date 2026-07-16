@@ -1,0 +1,7 @@
+allowBuilds:
+  msw: true
+  sharp: true
+
+overrides:
+  hono: 4.12.30
+  postcss: ^8.5.19

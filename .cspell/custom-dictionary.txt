@@ -1,0 +1,17 @@
+# Custom Dictionary Words
+Affogato
+Choco
+Coldbrew
+Conpanna
+Earlgray
+Frappuccino
+Gangnam
+hono
+Maccha
+Macchiato
+Milktea
+nums
+Presso
+Razberry
+Rooibos
+shadcn
