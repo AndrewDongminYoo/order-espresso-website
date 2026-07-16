@@ -31,14 +31,10 @@ describe('SiteHeader', () => {
     expect(storyLink.className).toContain('text-foreground/70');
   });
 
-  it('links to the online store in a new tab', () => {
+  it('links to the store section from the nav', () => {
     render(<SiteHeader />);
 
-    const storeLink = screen.getByRole('link', { name: /Store/ });
-    expect(storeLink.getAttribute('href')).toBe(
-      'https://smartstore.naver.com/highorder',
-    );
-    expect(storeLink.getAttribute('target')).toBe('_blank');
-    expect(storeLink.getAttribute('rel')).toContain('noopener');
+    const storeLink = screen.getByRole('link', { name: 'Store' });
+    expect(storeLink.getAttribute('href')).toBe('#store');
   });
 });

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { Gallery } from './gallery';
 import { MenuSection } from './menu-section';
 import { SiteFooter } from './site-footer';
+import { StoreSection } from './store-section';
 import { Visit } from './visit';
 
 describe('homepage content sections', () => {
@@ -54,6 +55,33 @@ describe('homepage content sections', () => {
       'https://smartstore.naver.com/highorder',
     );
     expect(storeLink.getAttribute('rel')).toContain('noopener');
+  });
+
+  it('renders curated store products linking to their product pages', () => {
+    render(<StoreSection />);
+
+    expect(
+      screen
+        .getByRole('link', { name: /바닐라빈 에그타르트/ })
+        .getAttribute('href'),
+    ).toBe('https://smartstore.naver.com/highorder/products/11600781192');
+    expect(
+      screen
+        .getByRole('link', { name: /콜드브루 더치커피/ })
+        .getAttribute('href'),
+    ).toBe('https://smartstore.naver.com/highorder/products/10604764162');
+    expect(
+      screen
+        .getByRole('link', { name: /오더그래놀라 프리미엄 선물세트/ })
+        .getAttribute('href'),
+    ).toBe('https://smartstore.naver.com/highorder/products/10940892447');
+    expect(screen.getByText('38,000원')).toBeTruthy();
+
+    const cta = screen.getByRole('link', { name: /스마트스토어 방문하기/ });
+    expect(cta.getAttribute('href')).toBe(
+      'https://smartstore.naver.com/highorder',
+    );
+    expect(cta.getAttribute('rel')).toContain('noopener');
   });
 
   it('links to the Naver smart store from the footer', () => {

@@ -2,6 +2,7 @@ import { SiteHeader } from '@/components/site-header';
 import { Hero } from '@/components/hero';
 import { Story } from '@/components/story';
 import { MenuSection } from '@/components/menu-section';
+import { StoreSection } from '@/components/store-section';
 import { Gallery } from '@/components/gallery';
 import { Reviews } from '@/components/reviews';
 import { Visit } from '@/components/visit';
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <Story />
         <MenuSection />
+        <StoreSection />
         <Gallery />
         <Reviews />
         <Visit />
