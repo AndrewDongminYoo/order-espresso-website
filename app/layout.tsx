@@ -27,7 +27,7 @@ const jsonLd = {
   name: 'ORDER ESPRESSO & BAKERY',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '봉은사로82길 27, 1층',
+    streetAddress: '봉은사로82길 27, 1층 · 지1층',
     addressLocality: '강남구',
     addressRegion: '서울',
     addressCountry: 'KR',
