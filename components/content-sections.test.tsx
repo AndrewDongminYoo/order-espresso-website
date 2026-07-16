@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Gallery } from './gallery';
 import { MenuSection } from './menu-section';
+import { SiteFooter } from './site-footer';
 import { Visit } from './visit';
 
 describe('homepage content sections', () => {
@@ -43,5 +44,24 @@ describe('homepage content sections', () => {
         .getByAltText('오더에스프레소 매장 카운터 전경')
         .getAttribute('sizes'),
     ).toBe('(min-width: 768px) 50vw, 100vw');
+  });
+
+  it('links to the Naver smart store from the visit contact info', () => {
+    render(<Visit />);
+
+    const storeLink = screen.getByRole('link', { name: /스마트스토어/ });
+    expect(storeLink.getAttribute('href')).toBe(
+      'https://smartstore.naver.com/highorder',
+    );
+    expect(storeLink.getAttribute('rel')).toContain('noopener');
+  });
+
+  it('links to the Naver smart store from the footer', () => {
+    render(<SiteFooter />);
+
+    const storeLink = screen.getByRole('link', { name: /스마트스토어/ });
+    expect(storeLink.getAttribute('href')).toBe(
+      'https://smartstore.naver.com/highorder',
+    );
   });
 });

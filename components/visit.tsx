@@ -89,6 +89,14 @@ export function Visit() {
                   >
                     @order_espresso.bakery
                   </a>
+                  <a
+                    href="https://smartstore.naver.com/highorder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 leading-relaxed underline decoration-background/30 underline-offset-4 transition-colors hover:text-background"
+                  >
+                    네이버 스마트스토어
+                  </a>
                 </dd>
               </div>
             </dl>

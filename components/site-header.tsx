@@ -1,14 +1,20 @@
 'use client';
 
+import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const links = [
+const links: { href: string; label: string; external?: boolean }[] = [
   { href: '#story', label: 'Story' },
   { href: '#menu', label: 'Menu' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#reviews', label: 'Reviews' },
   { href: '#visit', label: 'Visit' },
+  {
+    href: 'https://smartstore.naver.com/highorder',
+    label: 'Store',
+    external: true,
+  },
 ];
 
 export function SiteHeader() {
@@ -48,13 +54,18 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors ${
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              className={`inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors ${
                 scrolled
                   ? 'text-foreground/70 hover:text-accent'
                   : 'text-background/80 hover:text-background'
               }`}
             >
               {link.label}
+              {link.external ? (
+                <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+              ) : null}
             </a>
           ))}
         </nav>

@@ -30,4 +30,15 @@ describe('SiteHeader', () => {
     expect(header.className).toContain('backdrop-blur-md');
     expect(storyLink.className).toContain('text-foreground/70');
   });
+
+  it('links to the online store in a new tab', () => {
+    render(<SiteHeader />);
+
+    const storeLink = screen.getByRole('link', { name: /Store/ });
+    expect(storeLink.getAttribute('href')).toBe(
+      'https://smartstore.naver.com/highorder',
+    );
+    expect(storeLink.getAttribute('target')).toBe('_blank');
+    expect(storeLink.getAttribute('rel')).toContain('noopener');
+  });
 });
