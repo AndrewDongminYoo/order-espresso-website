@@ -16,44 +16,35 @@ const keywords = [
   { label: '차분한 분위기예요', count: 6 },
 ];
 
-const max = Math.max(...keywords.map((k) => k.count));
-
 export function Reviews() {
   return (
     <section id="reviews" className="scroll-mt-28 bg-background py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
           <div>
-            <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
-              Reviews
-            </span>
-            <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+            <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
               손님들이 남겨주신 이야기
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
               삼성중앙역 근처, 모던한 외관이 매력적인 오더에스프레소. 산미 없이
               묵직한 아메리카노와 따뜻하게 내어드리는 소금빵·에그타르트가 특히
-              사랑받고 있습니다.
+              사랑받고 있습니다. 네이버 방문자 리뷰에서 손님들이 직접 고른
+              키워드입니다.
             </p>
-            <blockquote className="mt-8 border-l-2 border-accent pl-5 text-pretty font-serif text-lg italic leading-relaxed text-foreground">
-              &ldquo;커피가 맛있어요&rdquo; 그리고 &ldquo;디저트가
-              맛있어요&rdquo; &mdash; 방문객들이 가장 많이 남긴 한마디.
-            </blockquote>
           </div>
 
-          <ul className="flex flex-col justify-center gap-4">
-            {keywords.map((k) => (
-              <li key={k.label} className="flex items-center gap-4">
-                <span className="w-40 shrink-0 text-sm text-foreground">
-                  {k.label}
-                </span>
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
-                  <div
-                    className="h-full rounded-full bg-accent"
-                    style={{ width: `${(k.count / max) * 100}%` }}
-                  />
-                </div>
-                <span className="w-10 shrink-0 text-right text-sm tabular-nums text-muted-foreground">
+          <ul className="flex flex-wrap content-center items-center gap-2.5">
+            {keywords.map((k, i) => (
+              <li
+                key={k.label}
+                className={`flex items-baseline gap-2 rounded-full border px-4 py-2 ${
+                  i < 3
+                    ? 'border-accent/40 bg-accent/10 text-foreground'
+                    : 'border-border text-muted-foreground'
+                }`}
+              >
+                <span className="text-sm">{k.label}</span>
+                <span className="text-xs tabular-nums text-muted-foreground">
                   {k.count}
                 </span>
               </li>
