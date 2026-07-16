@@ -2,7 +2,10 @@ import Image from 'next/image';
 
 export function Story() {
   return (
-    <section id="story" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <section
+      id="story"
+      className="mx-auto max-w-6xl scroll-mt-28 px-6 py-24 md:py-32"
+    >
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <div className="order-2 md:order-1">
           <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
@@ -29,7 +32,7 @@ export function Story() {
           <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
             <div>
               <dt className="text-xs uppercase tracking-widest text-muted-foreground">
-                Since
+                Location
               </dt>
               <dd className="mt-1 font-serif text-2xl text-foreground">
                 Seoul

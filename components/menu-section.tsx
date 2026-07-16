@@ -43,7 +43,7 @@ const groups: Group[] = [
     title: 'Espresso',
     items: [
       { name: '에스프레소', en: 'Espresso', price: '4.5' },
-      { name: '에스프레소 콘파냐', en: 'Espresso Conpanna', price: '5.0' },
+      { name: '에스프레소 콘파냐', en: 'Espresso con Panna', price: '5.0' },
       { name: '아메리카노', en: 'Americano', price: '4.5' },
       { name: '카페 라떼', en: 'Cafe Latte', price: '5.8' },
       { name: '오트 라떼', en: 'Oat Latte', price: '6.5' },
@@ -75,8 +75,8 @@ const groups: Group[] = [
     title: 'Cold Brew',
     note: '모모라 스페셜티 커피',
     items: [
-      { name: '콜드브루 커피', en: 'Coldbrew Coffee', price: '5.5' },
-      { name: '콜드브루 라떼', en: 'Coldbrew Latte', price: '6.0' },
+      { name: '콜드브루 커피', en: 'Cold Brew Coffee', price: '5.5' },
+      { name: '콜드브루 라떼', en: 'Cold Brew Latte', price: '6.0' },
       { name: '콜드브루 원액', en: '350ml', price: '16.0' },
     ],
   },
@@ -103,14 +103,14 @@ const groups: Group[] = [
       { name: '로투스 프라푸치노', en: 'Lotus Frappuccino', price: '7.0' },
       {
         name: '라즈베리 레몬에이드',
-        en: 'Razberry Lemon Ade',
+        en: 'Raspberry Lemon Ade',
         price: '7.5',
         best: true,
       },
       { name: '자몽 에이드', en: 'Grapefruit Ade', price: '7.5' },
       {
         name: '피치 얼그레이 아이스티',
-        en: 'Peach Earlgray Ice Tea',
+        en: 'Peach Earl Grey Iced Tea',
         price: '6.5',
       },
       { name: '리얼 초코', en: 'Real Choco', price: '7.0' },
@@ -132,7 +132,7 @@ const groups: Group[] = [
       { name: '자몽 티', en: 'Grapefruit Tea', price: '7.0' },
       {
         name: '라즈베리 레몬티',
-        en: 'Razberry Lemon Tea',
+        en: 'Raspberry Lemon Tea',
         price: '7.0',
         best: true,
       },
@@ -143,13 +143,13 @@ const groups: Group[] = [
     items: [
       {
         name: '프리미엄 오더 밀크티',
-        en: 'Premium Order Milktea',
+        en: 'Premium Order Milk Tea',
         price: '7.5',
         best: true,
       },
       { name: '블루베리 요거트', en: 'Blueberry Yogurt', price: '9.5' },
       { name: '망고 요거트', en: 'Mango Yogurt', price: '8.0' },
-      { name: '마차 라떼', en: 'Maccha Latte', price: '7.0' },
+      { name: '마차 라떼', en: 'Matcha Latte', price: '7.0' },
       {
         name: '100% 생과일 그릭요거트',
         en: 'Fruit Greek Yogurt',
@@ -176,7 +176,7 @@ const options = [
 
 export function MenuSection() {
   return (
-    <section id="menu" className="bg-secondary py-24 md:py-32">
+    <section id="menu" className="scroll-mt-28 bg-secondary py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
@@ -255,14 +255,19 @@ export function MenuSection() {
                 </div>
                 <ul className="mt-4 space-y-3">
                   {group.items.map((item) => (
-                    <li key={item.name} className="flex items-baseline gap-3">
-                      <span className="flex items-baseline gap-2 text-sm text-foreground">
-                        {item.best ? (
-                          <span className="text-accent" aria-label="추천 메뉴">
-                            ♥
-                          </span>
-                        ) : null}
-                        {item.name}
+                    <li key={item.name} className="flex items-start gap-3">
+                      <span className="flex min-w-0 flex-col text-sm text-foreground sm:flex-row sm:items-baseline sm:gap-2">
+                        <span className="flex min-w-0 items-baseline gap-2">
+                          {item.best ? (
+                            <span
+                              className="text-accent"
+                              aria-label="추천 메뉴"
+                            >
+                              ♥
+                            </span>
+                          ) : null}
+                          <span className="break-keep">{item.name}</span>
+                        </span>
                         {item.en ? (
                           <span className="text-xs tracking-wide text-muted-foreground">
                             {item.en}
@@ -273,7 +278,7 @@ export function MenuSection() {
                         className="mx-2 flex-1 border-b border-dotted border-border"
                         aria-hidden="true"
                       />
-                      <span className="text-sm tabular-nums text-foreground">
+                      <span className="shrink-0 text-sm tabular-nums text-foreground">
                         {item.price}
                       </span>
                     </li>

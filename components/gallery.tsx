@@ -30,7 +30,10 @@ const shots = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <section
+      id="gallery"
+      className="mx-auto max-w-6xl scroll-mt-28 px-6 py-24 md:py-32"
+    >
       <div className="flex flex-col items-center text-center">
         <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
           Gallery

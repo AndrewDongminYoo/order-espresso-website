@@ -29,7 +29,7 @@ export function SiteHeader() {
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-3 md:flex-row md:justify-between md:py-4">
         <a href="#top" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
@@ -43,12 +43,16 @@ export function SiteHeader() {
           </span>
         </a>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end md:gap-6">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors hover:text-accent"
+              className={`text-sm font-medium tracking-wide transition-colors ${
+                scrolled
+                  ? 'text-foreground/70 hover:text-accent'
+                  : 'text-background/80 hover:text-background'
+              }`}
             >
               {link.label}
             </a>

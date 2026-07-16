@@ -14,7 +14,11 @@ describe('SiteHeader', () => {
     render(<SiteHeader />);
 
     const header = screen.getByRole('banner');
+    const navigation = screen.getByRole('navigation');
+    const storyLink = screen.getByRole('link', { name: 'Story' });
     expect(header.className).toContain('bg-transparent');
+    expect(navigation.className).toContain('flex-wrap');
+    expect(storyLink.className).toContain('text-background/80');
 
     Object.defineProperty(window, 'scrollY', {
       configurable: true,
@@ -24,5 +28,6 @@ describe('SiteHeader', () => {
 
     expect(header.className).toContain('bg-background/85');
     expect(header.className).toContain('backdrop-blur-md');
+    expect(storyLink.className).toContain('text-foreground/70');
   });
 });

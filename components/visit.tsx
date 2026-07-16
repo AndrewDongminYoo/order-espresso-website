@@ -11,7 +11,7 @@ export function Visit() {
   return (
     <section
       id="visit"
-      className="bg-foreground py-24 text-background md:py-32"
+      className="scroll-mt-28 bg-foreground py-24 text-background md:py-32"
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
@@ -33,7 +33,7 @@ export function Visit() {
                   Address
                 </dt>
                 <dd className="mt-2 leading-relaxed">
-                  서울 강남구 봉은사로 82길 27, 1층 · 지1층
+                  서울 강남구 봉은사로82길 27, 1층 · 지1층
                 </dd>
               </div>
               <div className="border-t border-background/20 pt-5">

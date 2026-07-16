@@ -20,7 +20,7 @@ const max = keywords[0].count;
 
 export function Reviews() {
   return (
-    <section id="reviews" className="bg-background py-24 md:py-32">
+    <section id="reviews" className="scroll-mt-28 bg-background py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
           <div>
