@@ -1,11 +1,11 @@
 import Image from "next/image"
 
 const shots = [
-  { src: "/images/counter.png", alt: "에스프레소 머신이 놓인 오더에스프레소 카운터", span: "md:col-span-2 md:row-span-2 aspect-square" },
-  { src: "/images/bakery.png", alt: "나무 보드 위에 놓인 갓 구운 페이스트리", span: "aspect-square" },
-  { src: "/images/espresso.png", alt: "크레마가 살아있는 에스프레소 한 잔", span: "aspect-square" },
-  { src: "/images/latte.png", alt: "로제타 라떼 아트가 그려진 카페 라떼", span: "aspect-square" },
-  { src: "/images/seating.png", alt: "창가 햇살이 드는 아늑한 좌석", span: "aspect-square" },
+  { src: "/images/counter.jpg", alt: "에스프레소 머신이 놓인 오더에스프레소 카운터", span: "md:col-span-2 md:row-span-2 aspect-square" },
+  { src: "/images/bakery.jpg", alt: "소금빵이 가득 쌓인 진열대", span: "aspect-square" },
+  { src: "/images/pastry.jpg", alt: "겉이 바삭하게 구워진 뺑오쇼콜라", span: "aspect-square" },
+  { src: "/images/latte.jpg", alt: "크림이 올라간 시그니처 라떼", span: "aspect-square" },
+  { src: "/images/sandwich.jpg", alt: "치즈가 듬뿍 들어간 크로크무슈", span: "aspect-square" },
 ]
 
 export function Gallery() {

@@ -2,25 +2,25 @@ import Image from "next/image"
 
 const menu = [
   {
-    image: "/images/espresso.png",
+    image: "/images/espresso.jpg",
     tag: "Signature",
     title: "에스프레소",
     en: "Espresso",
     desc: "황금빛 크레마가 살아있는 진한 한 잔. 오더에스프레소의 기준이 되는 커피입니다.",
   },
   {
-    image: "/images/latte.png",
+    image: "/images/latte.jpg",
     tag: "Popular",
     title: "카페 라떼",
     en: "Café Latte",
     desc: "부드러운 우유와 진한 에스프레소가 만나는 균형. 하루 중 가장 편안한 순간.",
   },
   {
-    image: "/images/bakery.png",
+    image: "/images/bakery.jpg",
     tag: "Bakery",
     title: "오늘의 베이커리",
     en: "Fresh Bakery",
-    desc: "매장에서 직접 구운 크루아상과 스콘. 커피와 함께 즐기기 좋은 담백한 맛.",
+    desc: "매일 매장에서 구워내는 소금빵과 크루아상. 커피와 함께 즐기기 좋은 담백한 맛.",
   },
 ]
 

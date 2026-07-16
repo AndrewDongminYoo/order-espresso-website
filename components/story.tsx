@@ -42,7 +42,7 @@ export function Story() {
         <div className="order-1 md:order-2">
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <Image
-              src="/images/seating.png"
+              src="/images/seating.jpg"
               alt="창가 햇살이 드는 오더에스프레소의 조용한 좌석"
               fill
               className="object-cover"
