@@ -26,13 +26,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```bash
 pnpm dev    # Start the development server
+pnpm test   # Run the unit test suite once
+pnpm test:watch # Run the unit test suite in watch mode
 pnpm lint   # Run ESLint
 pnpm build  # Create a production build
 pnpm start  # Run the production build
 ```
 
-Run `pnpm lint` before and after making changes.
-Also run `pnpm build` before deployment or when a change affects Next.js behavior.
+Run `pnpm test`, `pnpm lint`, and `pnpm build` before opening a pull request.
+
+GitHub Actions runs the same checks for pull requests and pushes to `main`.
 
 ## Project Structure
 
