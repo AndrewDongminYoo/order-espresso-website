@@ -1,8 +1,11 @@
-import Image from "next/image"
+import Image from 'next/image';
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section
+      id="top"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+    >
       <Image
         src="/images/hero-interior.jpg"
         alt="아침 햇살이 스며드는 오더에스프레소 매장 내부"
@@ -46,5 +49,5 @@ export function Hero() {
         Espresso &amp; Bakery
       </div>
     </section>
-  )
+  );
 }

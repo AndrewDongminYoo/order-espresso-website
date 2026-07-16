@@ -1,30 +1,32 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { useEffect, useState } from "react"
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const links = [
-  { href: "#story", label: "Story" },
-  { href: "#menu", label: "Menu" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#visit", label: "Visit" },
-]
+  { href: '#story', label: 'Story' },
+  { href: '#menu', label: 'Menu' },
+  { href: '#gallery', label: 'Gallery' },
+  { href: '#reviews', label: 'Reviews' },
+  { href: '#visit', label: 'Visit' },
+];
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled
+          ? 'bg-background/85 backdrop-blur-md border-b border-border'
+          : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -54,5 +56,5 @@ export function SiteHeader() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

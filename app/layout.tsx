@@ -1,21 +1,21 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import { Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google'
-import './globals.css'
+import { Analytics } from '@vercel/analytics/next';
+import type { Metadata, Viewport } from 'next';
+import { Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google';
+import './globals.css';
 
 const notoSerifKR = Noto_Serif_KR({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-serif-kr',
   display: 'swap',
-})
+});
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
   variable: '--font-noto-sans-kr',
   display: 'swap',
-})
+});
 
 export const metadata: Metadata = {
   title: 'ORDER ESPRESSO & BAKERY | 오더에스프레소',
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
   },
-}
+};
 
 export const viewport: Viewport = {
   colorScheme: 'light',
   themeColor: '#f4ecd8',
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html
@@ -51,5 +51,5 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
-  )
+  );
 }

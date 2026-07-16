@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image';
 
 export function SiteFooter() {
   return (
@@ -11,7 +11,9 @@ export function SiteFooter() {
           height={56}
           className="h-14 w-14 rounded-full"
         />
-        <p className="font-serif text-lg tracking-[0.2em] text-foreground">ORDER ESPRESSO &amp; BAKERY</p>
+        <p className="font-serif text-lg tracking-[0.2em] text-foreground">
+          ORDER ESPRESSO &amp; BAKERY
+        </p>
         <p className="text-sm leading-relaxed text-muted-foreground">
           서울 강남구 봉은사로 82길 27, 1층 · 지1층
           <br />
@@ -30,5 +32,5 @@ export function SiteFooter() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
