@@ -46,7 +46,7 @@ export function Visit() {
 
           <div className="relative min-h-[320px] overflow-hidden rounded-sm md:min-h-full">
             <Image
-              src="/images/counter.png"
+              src="/images/counter.jpg"
               alt="오더에스프레소 매장 카운터 전경"
               fill
               className="object-cover"
