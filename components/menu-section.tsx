@@ -179,10 +179,7 @@ export function MenuSection() {
     <section id="menu" className="scroll-mt-28 bg-secondary py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
-            Menu
-          </span>
-          <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+          <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
             정성껏 내린 커피, 매일 굽는 빵
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">

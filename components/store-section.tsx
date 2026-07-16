@@ -30,10 +30,7 @@ export function StoreSection() {
       className="mx-auto max-w-6xl scroll-mt-28 px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
-          Online Store
-        </span>
-        <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+        <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
           집에서 만나는 오더에스프레소
         </h2>
         <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">

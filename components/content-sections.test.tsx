@@ -38,7 +38,7 @@ describe('homepage content sections', () => {
   it('shows visit details, amenities, and a responsive feature image', () => {
     render(<Visit />);
 
-    expect(screen.getByText('08:30 – 22:00')).toBeTruthy();
+    expect(screen.getByText('08:30~22:00')).toBeTruthy();
     expect(screen.getByText('무선 인터넷')).toBeTruthy();
     expect(
       screen

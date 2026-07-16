@@ -8,10 +8,7 @@ export function Story() {
     >
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <div className="order-2 md:order-1">
-          <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
-            Our Story
-          </span>
-          <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+          <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
             한 잔의 에스프레소로
             <br />
             시작하는 하루
@@ -28,33 +25,6 @@ export function Story() {
               하루도 여기서 천천히 시작해 보세요.
             </p>
           </div>
-
-          <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
-            <div>
-              <dt className="text-xs uppercase tracking-widest text-muted-foreground">
-                Location
-              </dt>
-              <dd className="mt-1 font-serif text-2xl text-foreground">
-                Seoul
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs uppercase tracking-widest text-muted-foreground">
-                Roast
-              </dt>
-              <dd className="mt-1 font-serif text-2xl text-foreground">
-                Daily
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs uppercase tracking-widest text-muted-foreground">
-                Bakery
-              </dt>
-              <dd className="mt-1 font-serif text-2xl text-foreground">
-                Fresh
-              </dd>
-            </div>
-          </dl>
         </div>
 
         <div className="order-1 md:order-2">

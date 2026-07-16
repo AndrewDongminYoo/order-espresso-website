@@ -40,10 +40,7 @@ export function Gallery() {
       className="mx-auto max-w-6xl scroll-mt-28 px-6 py-24 md:py-32"
     >
       <div className="flex flex-col items-center text-center">
-        <span className="text-xs font-medium uppercase tracking-[0.4em] text-accent">
-          Gallery
-        </span>
-        <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+        <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
           공간에 머무는 순간들
         </h2>
       </div>

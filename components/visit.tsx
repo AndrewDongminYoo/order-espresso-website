@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 const hours = [
-  { day: '월 – 금', time: '08:30 – 22:00' },
-  { day: '토 · 일', time: '09:00 – 21:30' },
+  { day: '월~금', time: '08:30~22:00' },
+  { day: '토·일', time: '09:00~21:30' },
 ];
 
 const amenities = ['단체 이용', '무선 인터넷', '포장', '배달', '주차'];
@@ -16,10 +16,7 @@ export function Visit() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
-            <span className="text-xs font-medium uppercase tracking-[0.4em] text-background/60">
-              Visit Us
-            </span>
-            <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug sm:text-4xl">
+            <h2 className="text-balance font-serif text-3xl font-semibold leading-snug sm:text-4xl">
               찾아오시는 길
             </h2>
             <p className="mt-6 max-w-md text-pretty leading-relaxed text-background/70">

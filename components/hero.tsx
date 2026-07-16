@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-dvh items-center justify-center overflow-hidden"
     >
       <Image
         src="/images/hero-interior.jpg"
@@ -44,10 +44,6 @@ export function Hero() {
             찾아오는 길
           </a>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-background/70">
-        Espresso &amp; Bakery
       </div>
     </section>
   );
