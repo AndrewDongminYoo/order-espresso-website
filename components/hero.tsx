@@ -11,6 +11,7 @@ export function Hero() {
         alt="아침 햇살이 스며드는 오더에스프레소 매장 내부"
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-foreground/45" />

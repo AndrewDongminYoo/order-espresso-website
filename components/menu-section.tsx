@@ -200,6 +200,7 @@ export function MenuSection() {
                   src={item.image || '/placeholder.svg'}
                   alt={`${item.title} - ${item.en}`}
                   fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium tracking-wide text-foreground">

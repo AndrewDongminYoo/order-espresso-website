@@ -50,6 +50,11 @@ export function Gallery() {
               src={shot.src || '/placeholder.svg'}
               alt={shot.alt}
               fill
+              sizes={
+                shot.src === '/images/counter.jpg'
+                  ? '(min-width: 768px) 50vw, 50vw'
+                  : '(min-width: 768px) 25vw, 50vw'
+              }
               className="object-cover"
             />
           </div>

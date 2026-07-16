@@ -110,6 +110,7 @@ export function Visit() {
               src="/images/counter.jpg"
               alt="오더에스프레소 매장 카운터 전경"
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
             />
           </div>
