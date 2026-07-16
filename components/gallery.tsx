@@ -5,26 +5,31 @@ const shots = [
     src: '/images/counter.jpg',
     alt: '에스프레소 머신이 놓인 오더에스프레소 카운터',
     span: 'md:col-span-2 md:row-span-2 aspect-square',
+    sizes: '50vw',
   },
   {
     src: '/images/bakery.jpg',
     alt: '소금빵이 가득 쌓인 진열대',
     span: 'aspect-square',
+    sizes: '(min-width: 768px) 25vw, 50vw',
   },
   {
     src: '/images/pastry.jpg',
     alt: '겉이 바삭하게 구워진 뺑오쇼콜라',
     span: 'aspect-square',
+    sizes: '(min-width: 768px) 25vw, 50vw',
   },
   {
     src: '/images/latte.jpg',
     alt: '크림이 올라간 시그니처 라떼',
     span: 'aspect-square',
+    sizes: '(min-width: 768px) 25vw, 50vw',
   },
   {
     src: '/images/sandwich.jpg',
     alt: '치즈가 듬뿍 들어간 크로크무슈',
     span: 'aspect-square',
+    sizes: '(min-width: 768px) 25vw, 50vw',
   },
 ];
 
@@ -50,14 +55,10 @@ export function Gallery() {
             className={`relative overflow-hidden rounded-sm ${shot.span}`}
           >
             <Image
-              src={shot.src || '/placeholder.svg'}
+              src={shot.src}
               alt={shot.alt}
               fill
-              sizes={
-                shot.src === '/images/counter.jpg'
-                  ? '(min-width: 768px) 50vw, 50vw'
-                  : '(min-width: 768px) 25vw, 50vw'
-              }
+              sizes={shot.sizes}
               className="object-cover"
             />
           </div>

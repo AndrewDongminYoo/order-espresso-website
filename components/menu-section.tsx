@@ -197,7 +197,7 @@ export function MenuSection() {
             <article key={item.en} className="group flex flex-col">
               <div className="relative aspect-4/5 overflow-hidden rounded-sm">
                 <Image
-                  src={item.image || '/placeholder.svg'}
+                  src={item.image}
                   alt={`${item.title} - ${item.en}`}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
@@ -260,6 +260,7 @@ export function MenuSection() {
                         <span className="flex min-w-0 items-baseline gap-2">
                           {item.best ? (
                             <span
+                              role="img"
                               className="text-accent"
                               aria-label="추천 메뉴"
                             >

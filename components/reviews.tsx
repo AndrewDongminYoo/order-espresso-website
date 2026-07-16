@@ -16,7 +16,7 @@ const keywords = [
   { label: '차분한 분위기예요', count: 6 },
 ];
 
-const max = keywords[0].count;
+const max = Math.max(...keywords.map((k) => k.count));
 
 export function Reviews() {
   return (
