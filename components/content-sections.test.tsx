@@ -60,21 +60,25 @@ describe('homepage content sections', () => {
   it('renders curated store products linking to their product pages', () => {
     render(<StoreSection />);
 
-    expect(
-      screen
-        .getByRole('link', { name: /바닐라빈 에그타르트/ })
-        .getAttribute('href'),
-    ).toBe('https://smartstore.naver.com/highorder/products/11600781192');
-    expect(
-      screen
-        .getByRole('link', { name: /콜드브루 더치커피/ })
-        .getAttribute('href'),
-    ).toBe('https://smartstore.naver.com/highorder/products/10604764162');
-    expect(
-      screen
-        .getByRole('link', { name: /오더그래놀라 프리미엄 선물세트/ })
-        .getAttribute('href'),
-    ).toBe('https://smartstore.naver.com/highorder/products/10940892447');
+    const products: [RegExp, string][] = [
+      [
+        /바닐라빈 에그타르트/,
+        'https://smartstore.naver.com/highorder/products/11600781192',
+      ],
+      [
+        /콜드브루 더치커피/,
+        'https://smartstore.naver.com/highorder/products/10604764162',
+      ],
+      [
+        /오더그래놀라 프리미엄 선물세트/,
+        'https://smartstore.naver.com/highorder/products/10940892447',
+      ],
+    ];
+    for (const [name, href] of products) {
+      expect(screen.getByRole('link', { name }).getAttribute('href')).toBe(
+        href,
+      );
+    }
     expect(screen.getByText('38,000원')).toBeTruthy();
 
     const cta = screen.getByRole('link', { name: /스마트스토어 방문하기/ });
