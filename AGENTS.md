@@ -14,13 +14,14 @@ Use pnpm because this repository includes `pnpm-lock.yaml`.
 
 ```bash
 pnpm dev       # Run the development server at http://localhost:3000
+pnpm test      # Run the unit test suite once (Vitest)
 pnpm lint      # Run ESLint across JavaScript and TypeScript files
 pnpm build     # Create a production build and catch Next.js build errors
 pnpm start     # Serve a completed production build
 ```
 
-Run `pnpm lint` and `pnpm build` before opening a pull request.
-There is no automated test suite configured at present; add focused tests alongside a new test setup rather than implying coverage exists.
+Run `pnpm test`, `pnpm lint`, and `pnpm build` before opening a pull request.
+Unit tests use Vitest with Testing Library in jsdom and are colocated with source (`components/*.test.tsx`, `lib/utils.test.ts`); `test/setup.ts` provides shared setup.
 
 ## Coding Style & Naming Conventions
 
