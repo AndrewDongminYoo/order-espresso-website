@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     images: [
       {
-        url: '/images/hero-interior.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
-        height: 800,
+        height: 630,
         alt: 'ORDER ESPRESSO & BAKERY 매장 내부',
       },
     ],
