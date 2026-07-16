@@ -14,6 +14,8 @@ export function SiteFooter() {
         <p className="font-serif text-lg tracking-[0.2em] text-foreground">ORDER ESPRESSO &amp; BAKERY</p>
         <p className="text-sm leading-relaxed text-muted-foreground">
           서울 강남구 봉은사로 82길 27, 1층 · 지1층
+          <br />
+          평일 08:30–22:00 · 주말 09:00–21:30 · 0507-1415-2531
         </p>
         <a
           href="https://www.instagram.com/order_espresso.bakery"
