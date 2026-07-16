@@ -64,7 +64,6 @@ export function Story() {
               alt="창가 햇살이 드는 오더에스프레소의 조용한 좌석"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              loading="eager"
               className="object-cover"
             />
           </div>

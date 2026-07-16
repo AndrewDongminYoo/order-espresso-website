@@ -11,7 +11,11 @@ describe('homepage content sections', () => {
     expect(screen.getByRole('heading', { name: '전체 메뉴' })).toBeTruthy();
     expect(screen.getByText('오더 스카치')).toBeTruthy();
 
-    for (const image of screen.getAllByRole('img')) {
+    const images = screen
+      .getAllByRole('img')
+      .filter((el) => el.tagName === 'IMG');
+    expect(images).toHaveLength(3);
+    for (const image of images) {
       expect(image.getAttribute('sizes')).toBe(
         '(min-width: 768px) 33vw, 100vw',
       );
@@ -23,9 +27,7 @@ describe('homepage content sections', () => {
 
     const images = screen.getAllByRole('img');
     expect(images).toHaveLength(5);
-    expect(images[0].getAttribute('sizes')).toBe(
-      '(min-width: 768px) 50vw, 50vw',
-    );
+    expect(images[0].getAttribute('sizes')).toBe('50vw');
     for (const image of images.slice(1)) {
       expect(image.getAttribute('sizes')).toBe('(min-width: 768px) 25vw, 50vw');
     }
