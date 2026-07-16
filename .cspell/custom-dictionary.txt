@@ -10,7 +10,11 @@ hono
 Maccha
 Macchiato
 Milktea
+noto
 nums
+oklch
+oxipng
+pinact
 Presso
 Razberry
 Rooibos
