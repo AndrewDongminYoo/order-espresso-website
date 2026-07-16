@@ -1,33 +1,73 @@
-# order-espresso-website
+# ORDER ESPRESSO & BAKERY
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+This single-page website introduces ORDER ESPRESSO & BAKERY, an espresso bar and bakery.
+It presents the menu, brand story, gallery, visit information, and customer reviews in a Korean-first brand experience.
 
-## Built with v0
+## Tech Stack
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
-
-[Continue working on v0 →](https://v0.app/chat/projects/prj_c9njHfkSzAxpNIIYX2pS2J93XHk5)
+- [Next.js](https://nextjs.org/) 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4 with `tw-animate-css`
+- `next/image` for local image rendering
+- Vercel Analytics in production
 
 ## Getting Started
 
-First, run the development server:
+This repository uses `pnpm-lock.yaml`, so install dependencies and run the project with pnpm.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-## Learn More
+```bash
+pnpm dev    # Start the development server
+pnpm lint   # Run ESLint
+pnpm build  # Create a production build
+pnpm start  # Run the production build
+```
 
-To learn more, take a look at the following resources:
+Run `pnpm lint` before and after making changes.
+Also run `pnpm build` before deployment or when a change affects Next.js behavior.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+## Project Structure
+
+```plaintext
+app/
+  layout.tsx       # Global metadata, fonts, and Analytics
+  page.tsx         # Homepage section composition
+  globals.css      # Tailwind imports and design tokens
+components/
+  hero.tsx         # Homepage sections
+  menu-section.tsx
+  gallery.tsx
+  reviews.tsx
+  ui/              # Reusable UI primitives
+lib/
+  utils.ts         # Shared utilities
+public/images/     # Local menu and store images
+```
+
+Create new homepage sections in `components/` and compose them in `app/page.tsx`.
+Manage shared color, typography, and radius tokens in `app/globals.css`.
+
+## Content and Assets
+
+Keep user-facing Korean copy natural and consistent with the brand's tone.
+Add images to `public/images/` and reference them through `/images/<file-name>`.
+Render local images with `next/image` where practical and provide meaningful `alt` text.
+
+## Quality Checks
+
+ESLint rules are defined in `eslint.config.mjs`.
+Prettier uses two-space indentation and single quotes.
+The Trunk configuration (`.trunk/trunk.yaml`) manages additional checks for Prettier, Markdown and YAML, security, and dependencies.
+
+## Additional Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
