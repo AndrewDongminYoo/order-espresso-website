@@ -25,6 +25,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CafeOrCoffeeShop',
   name: 'ORDER ESPRESSO & BAKERY',
+  url: siteUrl,
+  image: `${siteUrl}/images/og-image.jpg`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '봉은사로82길 27, 1층 · 지1층',
@@ -47,7 +49,10 @@ const jsonLd = {
       closes: '21:30',
     },
   ],
-  sameAs: ['https://www.instagram.com/order_espresso.bakery'],
+  sameAs: [
+    'https://www.instagram.com/order_espresso.bakery',
+    'https://smartstore.naver.com/highorder',
+  ],
 };
 
 export const metadata: Metadata = {
@@ -69,6 +74,9 @@ export const metadata: Metadata = {
         alt: 'ORDER ESPRESSO & BAKERY 매장 내부',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 
