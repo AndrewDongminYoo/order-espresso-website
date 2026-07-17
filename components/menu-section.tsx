@@ -2,21 +2,21 @@ import Image from 'next/image';
 
 const signatures = [
   {
-    image: '/images/espresso.jpg',
+    image: '/images/espresso.png',
     tag: 'Best',
     title: '아메리카노',
     en: 'Americano',
-    desc: '산미 없이 묵직하고 진한 바디감. 디카페인·오트밀크로도 변경할 수 있습니다.',
+    desc: '산미 없이 묵직하고 진한 바디감. 디카페인으로도 변경할 수 있습니다.',
   },
   {
-    image: '/images/latte.jpg',
-    tag: 'Signature',
-    title: '오더 시그니처',
-    en: 'Order Signature',
-    desc: '오더 스카치·더치·크림치즈. 오직 아이스로만 즐기는 오더에스프레소만의 크림 커피.',
+    image: '/images/latte.png',
+    tag: 'Latte',
+    title: '프렌치 바닐라라떼',
+    en: 'French Vanilla Latte',
+    desc: '바닐라 시럽, 헤이즐넛 시럽을 넣은 카페라떼. 오트밀크로도 변경할 수 있습니다.',
   },
   {
-    image: '/images/bakery.jpg',
+    image: '/images/egg-tarts.png',
     tag: 'Bakery',
     title: '소금빵 & 에그타르트',
     en: 'Fresh Bakery',

@@ -26,7 +26,7 @@ const jsonLd = {
   '@type': 'CafeOrCoffeeShop',
   name: 'ORDER ESPRESSO & BAKERY',
   url: siteUrl,
-  image: `${siteUrl}/images/og-image.jpg`,
+  image: `${siteUrl}/images/og-image.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '봉은사로82길 27, 1층 · 지1층',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'ORDER ESPRESSO & BAKERY 매장 내부',

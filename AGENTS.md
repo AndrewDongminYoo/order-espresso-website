@@ -6,7 +6,7 @@ This is a Next.js App Router site for ORDER ESPRESSO.
 `app/` contains the application shell: `layout.tsx`, the homepage composition in `page.tsx`, and shared Tailwind CSS in `globals.css`.
 Reusable page sections live in `components/`, while primitive UI building blocks live in `components/ui/`.
 Put shared TypeScript helpers in `lib/`; `lib/utils.ts` currently provides class-name composition.
-Static images belong in `public/images/` and are referenced from the site as `/images/<name>.jpg`.
+Static images belong in `public/images/` and are referenced from the site as `/images/<name>.png`.
 
 ## Build, Test, and Development Commands
 
