@@ -33,18 +33,27 @@ export function Reviews() {
             </p>
           </div>
 
-          <ul className="flex flex-wrap content-center items-center gap-2.5">
+          <ul
+            aria-label="네이버 방문자 리뷰 키워드"
+            className="flex flex-wrap content-center items-center gap-2.5"
+          >
             {keywords.map((k, i) => (
               <li
                 key={k.label}
+                aria-label={`${k.label} — ${k.count}명 선택`}
                 className={`flex items-baseline gap-2 rounded-full border px-4 py-2 ${
                   i < 3
                     ? 'border-accent/40 bg-accent/10 text-foreground'
                     : 'border-border text-muted-foreground'
                 }`}
               >
-                <span className="text-sm">{k.label}</span>
-                <span className="text-xs tabular-nums text-muted-foreground">
+                <span aria-hidden="true" className="text-sm">
+                  {k.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="text-xs tabular-nums text-muted-foreground"
+                >
                   {k.count}
                 </span>
               </li>
