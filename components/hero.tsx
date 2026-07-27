@@ -7,7 +7,7 @@ export function Hero() {
       className="relative flex min-h-dvh items-center justify-center overflow-hidden"
     >
       <Image
-        src="/images/hero-interior.png"
+        src="/images/hero-interior.webp"
         alt="아침 햇살이 스며드는 오더에스프레소 매장 내부"
         fill
         priority

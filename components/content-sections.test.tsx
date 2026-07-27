@@ -47,6 +47,15 @@ describe('homepage content sections', () => {
     ).toBe('(min-width: 768px) 50vw, 100vw');
   });
 
+  it('offers a Naver Map directions link from the visit section', () => {
+    render(<Visit />);
+
+    const directions = screen.getByRole('link', { name: /길찾기/ });
+    expect(directions.getAttribute('href')).toContain('map.naver.com');
+    expect(directions.getAttribute('rel')).toContain('noopener');
+    expect(directions.getAttribute('target')).toBe('_blank');
+  });
+
   it('links to the Naver smart store from the visit contact info', () => {
     render(<Visit />);
 

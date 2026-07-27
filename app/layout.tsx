@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata, Viewport } from 'next';
 import { Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google';
+import { business, openingHours, siteUrl } from '@/lib/site';
 import './globals.css';
 
 const notoSerifKR = Noto_Serif_KR({
@@ -17,66 +18,102 @@ const notoSansKR = Noto_Sans_KR({
   display: 'swap',
 });
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'http://localhost:3000';
+const ogImageAlt = 'ORDER ESPRESSO & BAKERY 매장 내부';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CafeOrCoffeeShop',
-  name: 'ORDER ESPRESSO & BAKERY',
+  '@id': `${siteUrl}/#business`,
+  name: business.name,
+  alternateName: business.shortName,
+  description: business.description,
   url: siteUrl,
   image: `${siteUrl}/images/og-image.png`,
+  logo: `${siteUrl}/images/logo.png`,
+  servesCuisine: ['Coffee', 'Espresso', 'Bakery'],
+  priceRange: business.priceRange,
+  currenciesAccepted: 'KRW',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '봉은사로82길 27, 1층 · 지1층',
-    addressLocality: '강남구',
-    addressRegion: '서울',
-    addressCountry: 'KR',
+    streetAddress: business.streetAddress,
+    addressLocality: business.addressLocality,
+    addressRegion: business.addressRegion,
+    postalCode: business.postalCode,
+    addressCountry: business.addressCountry,
   },
-  telephone: '+82-507-1415-2531',
-  openingHoursSpecification: [
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: business.latitude,
+    longitude: business.longitude,
+  },
+  hasMap: business.naverMap,
+  telephone: business.telephone,
+  openingHoursSpecification: openingHours.map((spec) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: spec.days,
+    opens: spec.opens,
+    closes: spec.closes,
+  })),
+  amenityFeature: [
     {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:30',
-      closes: '22:00',
+      '@type': 'LocationFeatureSpecification',
+      name: '무선 인터넷',
+      value: true,
     },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Saturday', 'Sunday'],
-      opens: '09:00',
-      closes: '21:30',
-    },
+    { '@type': 'LocationFeatureSpecification', name: '포장', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '배달', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '주차', value: true },
   ],
-  sameAs: [
-    'https://www.instagram.com/order_espresso.bakery',
-    'https://smartstore.naver.com/highorder',
-  ],
+  sameAs: [business.instagram, business.smartStore],
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'ORDER ESPRESSO & BAKERY | 오더에스프레소',
-  description:
-    '서울 강남 봉은사로의 작은 에스프레소 바 & 베이커리. 진한 에스프레소 한 잔과 갓 구운 빵으로 채우는 조용한 하루. ORDER ESPRESSO & BAKERY.',
+  description: business.description,
+  applicationName: business.name,
+  keywords: [
+    '오더에스프레소',
+    'ORDER ESPRESSO',
+    '강남 카페',
+    '삼성중앙역 카페',
+    '봉은사로 카페',
+    '에스프레소 바',
+    '베이커리',
+    '소금빵',
+    '에그타르트',
+    '콜드브루',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+  },
   openGraph: {
     title: 'ORDER ESPRESSO & BAKERY | 오더에스프레소',
     description:
       '서울 강남 봉은사로의 작은 에스프레소 바 & 베이커리. 진한 에스프레소와 갓 구운 빵.',
+    url: siteUrl,
+    siteName: business.name,
     type: 'website',
     locale: 'ko_KR',
     images: [
       {
         url: '/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'ORDER ESPRESSO & BAKERY 매장 내부',
+        width: 1440,
+        height: 893,
+        alt: ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'ORDER ESPRESSO & BAKERY | 오더에스프레소',
+    description:
+      '서울 강남 봉은사로의 작은 에스프레소 바 & 베이커리. 진한 에스프레소와 갓 구운 빵.',
+    images: ['/images/og-image.png'],
   },
 };
 
@@ -102,6 +139,12 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
           }}
         />
+        <a
+          href="#main-content"
+          className="sr-only rounded-sm bg-foreground px-4 py-2 text-sm font-medium text-background focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
+        >
+          본문으로 건너뛰기
+        </a>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

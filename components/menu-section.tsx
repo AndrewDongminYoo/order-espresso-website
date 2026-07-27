@@ -2,21 +2,21 @@ import Image from 'next/image';
 
 const signatures = [
   {
-    image: '/images/espresso.png',
+    image: '/images/espresso.webp',
     tag: 'Best',
     title: '아메리카노',
     en: 'Americano',
     desc: '산미 없이 묵직하고 진한 바디감. 디카페인으로도 변경할 수 있습니다.',
   },
   {
-    image: '/images/latte.png',
+    image: '/images/latte.webp',
     tag: 'Latte',
     title: '프렌치 바닐라라떼',
     en: 'French Vanilla Latte',
     desc: '바닐라 시럽, 헤이즐넛 시럽을 넣은 카페라떼. 오트밀크로도 변경할 수 있습니다.',
   },
   {
-    image: '/images/egg-tarts.png',
+    image: '/images/egg-tarts.webp',
     tag: 'Bakery',
     title: '소금빵 & 에그타르트',
     en: 'Fresh Bakery',

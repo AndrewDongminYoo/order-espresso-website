@@ -1,0 +1,37 @@
+# ORDER ESPRESSO & BAKERY (오더에스프레소)
+
+> 서울 강남 봉은사로의 작은 에스프레소 바 & 베이커리. 진한 에스프레소 한 잔과
+> 갓 구운 빵으로 채우는 조용한 하루. A small espresso bar and bakery near
+> Samseong-jungang Station in Gangnam, Seoul.
+
+## Location & Contact
+
+- Address: 서울 강남구 봉은사로82길 27, 1층 · 지1층 (Gangnam-gu, Seoul, KR)
+- Nearest station: 삼성중앙역 (Samseong-jungang Stn.) Exit 5, ~3 min walk
+- Phone: 0507-1415-2531
+- Instagram: https://www.instagram.com/order_espresso.bakery
+- Naver Smart Store (online): https://smartstore.naver.com/highorder
+
+## Hours
+
+- Mon–Fri: 08:30–22:00
+- Sat–Sun: 09:00–21:30
+
+## Highlights
+
+- Signature: 아메리카노 (Americano, no acidity, full body), 프렌치 바닐라라떼
+  (French Vanilla Latte), 소금빵 & 에그타르트 (salt bread & egg tart, baked daily).
+- Amenities: 무선 인터넷 (Wi-Fi), 포장 (takeout), 배달 (delivery), 주차 (parking),
+  단체 이용 (groups).
+- Price unit on the menu is 1,000 KRW (e.g. 4.5 = 4,500원).
+
+## Online Store (선물 / 배송)
+
+- 오더 마다가스카르 바닐라빈 에그타르트 — https://smartstore.naver.com/highorder/products/11600781192
+- 콜드브루 더치커피 에티오피아 모모라 350ml — https://smartstore.naver.com/highorder/products/10604764162
+- 오더그래놀라 프리미엄 선물세트 — https://smartstore.naver.com/highorder/products/10940892447
+
+## Notes
+
+- All primary content is in Korean by design.
+- Structured data (schema.org CafeOrCoffeeShop) is embedded as JSON-LD on the homepage.

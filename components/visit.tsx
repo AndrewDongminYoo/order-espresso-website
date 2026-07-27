@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { MapPin } from 'lucide-react';
+import { business } from '@/lib/site';
 
 const hours = [
   { day: '월~금', time: '08:30~22:00' },
@@ -31,6 +33,17 @@ export function Visit() {
                 </dt>
                 <dd className="mt-2 leading-relaxed">
                   서울 강남구 봉은사로82길 27, 1층 · 지1층
+                </dd>
+                <dd className="mt-3">
+                  <a
+                    href={business.naverMap}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-background/40 px-4 py-1.5 text-xs font-medium tracking-wide text-background transition-colors hover:bg-background/10"
+                  >
+                    <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
+                    네이버 지도에서 길찾기
+                  </a>
                 </dd>
               </div>
               <div className="border-t border-background/20 pt-5">
@@ -112,7 +125,7 @@ export function Visit() {
 
           <div className="relative min-h-80 overflow-hidden rounded-sm md:min-h-full">
             <Image
-              src="/images/counter.png"
+              src="/images/counter.webp"
               alt="오더에스프레소 매장 카운터 전경"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
