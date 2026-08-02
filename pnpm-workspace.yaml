@@ -6,3 +6,5 @@ overrides:
   hono: 4.12.30
   postcss: ^8.5.19
   sharp: ^0.35.0 # GHSA-f88m-g3jw-g9cj (libvips CVE-2026-33327/33328/35590/35591)
+  brace-expansion@5: ^5.0.8
+  fast-uri: ^3.1.4
