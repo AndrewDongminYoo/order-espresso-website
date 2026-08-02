@@ -9,7 +9,7 @@ All user-facing copy is Korean by design — preserve its language and tone unle
 
 ## Commands
 
-Use pnpm (lockfile is `pnpm-lock.yaml`; CI pins pnpm 11.13.0, Node 24).
+Use pnpm (lockfile is `pnpm-lock.yaml`; CI pins pnpm 11.18.0, Node 24).
 
 ```bash
 pnpm dev                                  # Dev server at http://localhost:3000
