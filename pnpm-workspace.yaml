@@ -3,7 +3,8 @@ allowBuilds:
   sharp: true
 
 overrides:
-  hono: 4.12.30
+  nanoid@3: ^3.3.18 # GHSA-2v37-7h3g-55p8
+  hono: ^4.12.34 # GHSA-f23p-vx2j-j53r, GHSA-79qm-7rj5-m7r9, GHSA-54fx-42gc-7vw4, GHSA-8j4g-w8fx-2239
   postcss: ^8.5.19
   sharp: ^0.35.0 # GHSA-f88m-g3jw-g9cj (libvips CVE-2026-33327/33328/35590/35591)
   brace-expansion@5: ^5.0.8
