@@ -1,64 +1,82 @@
-const keywords = [
+const topKeywords = [
   { label: '커피가 맛있어요', count: 264 },
   { label: '디저트가 맛있어요', count: 248 },
   { label: '음료가 맛있어요', count: 125 },
-  { label: '친절해요', count: 98 },
-  { label: '인테리어가 멋져요', count: 70 },
-  { label: '대화하기 좋아요', count: 67 },
-  { label: '특별한 메뉴가 있어요', count: 57 },
-  { label: '매장이 청결해요', count: 51 },
-  { label: '좌석이 편해요', count: 29 },
-  { label: '가성비가 좋아요', count: 22 },
-  { label: '사진이 잘 나와요', count: 21 },
-  { label: '집중하기 좋아요', count: 14 },
-  { label: '빵이 맛있어요', count: 10 },
-  { label: '아늑해요', count: 7 },
-  { label: '차분한 분위기예요', count: 6 },
 ];
 
+const supportingKeywords = ['친절해요', '인테리어가 멋져요', '대화하기 좋아요'];
+
 export function Reviews() {
+  const highestCount = topKeywords[0].count;
+
   return (
     <section id="reviews" className="scroll-mt-28 bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
-          <div>
-            <h2 className="text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
-              손님들이 남겨주신 이야기
-            </h2>
-            <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-              삼성중앙역 근처, 모던한 외관이 매력적인 오더에스프레소. 산미 없이
-              묵직한 아메리카노와 따뜻하게 내어드리는 소금빵·에그타르트가 특히
-              사랑받고 있습니다. 네이버 방문자 리뷰에서 손님들이 직접 고른
-              키워드입니다.
-            </p>
+      <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-20">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-accent">
+            Visitor notes
+          </p>
+          <h2 className="mt-5 text-balance font-serif text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
+            손님들이 기억한
+            <br />
+            오더의 맛과 공간
+          </h2>
+          <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
+            네이버 방문자 리뷰에서 반복해서 선택된 핵심만 간결하게 모았습니다.
+            메뉴와 공간이 어떤 인상으로 남았는지 확인해 보세요.
+          </p>
+        </div>
+
+        <div>
+          <div className="flex items-center justify-between border-b border-border pb-4 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            <span>가장 많이 선택한 키워드</span>
+            <span>선택</span>
           </div>
 
-          <ul
-            aria-label="네이버 방문자 리뷰 키워드"
-            className="flex flex-wrap content-center items-center gap-2.5"
-          >
-            {keywords.map((k, i) => (
+          <ol aria-label="네이버 방문자 리뷰 키워드">
+            {topKeywords.map((keyword, index) => (
               <li
-                key={k.label}
-                aria-label={`${k.label} — ${k.count}명 선택`}
-                className={`flex items-baseline gap-2 rounded-full border px-4 py-2 ${
-                  i < 3
-                    ? 'border-accent/40 bg-accent/10 text-foreground'
-                    : 'border-border text-muted-foreground'
-                }`}
+                key={keyword.label}
+                aria-label={`${keyword.label} — ${keyword.count}명 선택`}
+                className="grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-border py-6"
               >
-                <span aria-hidden="true" className="text-sm">
-                  {k.label}
-                </span>
                 <span
                   aria-hidden="true"
-                  className="text-xs tabular-nums text-muted-foreground"
+                  className="font-serif text-sm tabular-nums text-accent"
                 >
-                  {k.count}
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div aria-hidden="true">
+                  <span className="font-serif text-lg text-foreground">
+                    {keyword.label}
+                  </span>
+                  <div className="mt-3 h-px overflow-hidden bg-muted">
+                    <div
+                      className="h-full bg-accent"
+                      style={{
+                        width: `${(keyword.count / highestCount) * 100}%`,
+                      }}
+                    />
+                  </div>
+                </div>
+                <span
+                  aria-hidden="true"
+                  className="text-sm tabular-nums text-muted-foreground"
+                >
+                  {keyword.count}
                 </span>
               </li>
             ))}
-          </ul>
+          </ol>
+
+          <div className="pt-6">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              공간과 서비스
+            </p>
+            <p className="mt-3 text-pretty font-serif text-lg leading-relaxed text-foreground">
+              {supportingKeywords.join(' · ')}
+            </p>
+          </div>
         </div>
       </div>
     </section>
