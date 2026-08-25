@@ -73,7 +73,7 @@ export function StoreSection() {
           href={storeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3 text-sm font-medium tracking-wide text-background transition-transform hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-full bg-inverse px-8 py-3 text-sm font-medium tracking-wide text-inverse-foreground transition-transform hover:-translate-y-0.5"
         >
           스마트스토어 방문하기
           <ArrowUpRight aria-hidden="true" className="h-4 w-4" />

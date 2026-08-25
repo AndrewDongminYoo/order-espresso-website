@@ -18,7 +18,7 @@ describe('SiteHeader', () => {
     const storyLink = screen.getByRole('link', { name: 'Story' });
     expect(header.className).toContain('bg-transparent');
     expect(navigation.className).toContain('flex-wrap');
-    expect(storyLink.className).toContain('text-background/80');
+    expect(storyLink.className).toContain('text-on-image/80');
 
     Object.defineProperty(window, 'scrollY', {
       configurable: true,
@@ -36,5 +36,14 @@ describe('SiteHeader', () => {
 
     const storeLink = screen.getByRole('link', { name: 'Store' });
     expect(storeLink.getAttribute('href')).toBe('#store');
+  });
+
+  it('exposes the ambient mode control and touch-sized navigation links', () => {
+    render(<SiteHeader />);
+
+    expect(screen.getByRole('combobox', { name: '화면 분위기' })).toBeTruthy();
+    expect(screen.getByRole('link', { name: 'Story' }).className).toContain(
+      'min-h-11',
+    );
   });
 });

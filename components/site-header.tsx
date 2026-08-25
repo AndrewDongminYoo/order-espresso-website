@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { AmbientModeControl } from '@/components/ambient-mode-control';
 
 const links = [
   { href: '#story', label: 'Story' },
@@ -46,14 +47,15 @@ export function SiteHeader() {
 
   return (
     <header
+      data-scrolled={scrolled}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
           ? 'bg-background/85 backdrop-blur-md border-b border-border'
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-3 md:flex-row md:justify-between md:py-4">
-        <a href="#top" className="flex items-center gap-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-x-4 px-6 py-2 md:grid-cols-[auto_1fr_auto] md:py-3">
+        <a href="#top" className="flex min-h-11 items-center gap-3">
           <Image
             src="/images/logo.png"
             alt="ORDER ESPRESSO 로고"
@@ -61,14 +63,18 @@ export function SiteHeader() {
             height={40}
             className="h-10 w-10 rounded-full"
           />
-          <span className="hidden text-sm font-medium tracking-[0.2em] text-foreground sm:block">
+          <span
+            className={`hidden text-sm font-medium tracking-[0.2em] transition-colors sm:block ${
+              scrolled ? 'text-foreground' : 'text-on-image'
+            }`}
+          >
             ORDER ESPRESSO
           </span>
         </a>
 
         <nav
           aria-label="주요 섹션"
-          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end md:gap-6"
+          className="col-span-2 row-start-2 flex flex-wrap items-center justify-center gap-x-1 md:col-span-1 md:col-start-2 md:row-start-1 md:gap-2"
         >
           {links.map((link) => {
             const isActive = activeId === link.href;
@@ -77,14 +83,14 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? 'true' : undefined}
-                className={`text-sm font-medium tracking-wide transition-colors ${
+                className={`inline-flex min-h-11 items-center px-1.5 text-xs font-medium tracking-wide transition-colors sm:px-2 sm:text-sm ${
                   scrolled
                     ? isActive
                       ? 'text-accent'
                       : 'text-foreground/70 hover:text-accent'
                     : isActive
-                      ? 'text-background'
-                      : 'text-background/80 hover:text-background'
+                      ? 'text-on-image'
+                      : 'text-on-image/80 hover:text-on-image'
                 }`}
               >
                 {link.label}
@@ -92,6 +98,10 @@ export function SiteHeader() {
             );
           })}
         </nav>
+
+        <div className="col-start-2 row-start-1 md:col-start-3">
+          <AmbientModeControl />
+        </div>
       </div>
     </header>
   );

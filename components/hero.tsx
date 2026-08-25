@@ -12,12 +12,12 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="ambient-hero-image object-cover transition-[filter,transform] duration-500 ease-out"
       />
-      <div className="absolute inset-0 bg-foreground/45" />
+      <div className="ambient-hero-overlay absolute inset-0 bg-inverse/45 transition-colors duration-300 ease-out" />
 
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 text-center text-background">
-        <span className="mb-6 text-xs font-medium uppercase tracking-[0.5em] text-background/80">
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 text-center text-on-image">
+        <span className="mb-6 text-xs font-medium uppercase tracking-[0.5em] text-on-image/80">
           Seoul · Gangnam
         </span>
         <h1 className="text-balance font-serif text-5xl font-semibold leading-tight sm:text-6xl md:text-7xl">
@@ -25,7 +25,7 @@ export function Hero() {
           <br />
           ESPRESSO
         </h1>
-        <p className="mt-8 max-w-md text-pretty text-base leading-relaxed text-background/85 sm:text-lg">
+        <p className="mt-8 max-w-md text-pretty text-base leading-relaxed text-on-image/85 sm:text-lg">
           진한 에스프레소 한 잔과 갓 구운 빵.
           <br />
           바쁜 도시 한가운데, 잠시 숨을 고르는 작은 공간.
@@ -33,13 +33,13 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#menu"
-            className="rounded-full bg-background px-8 py-3 text-sm font-medium tracking-wide text-foreground transition-transform hover:-translate-y-0.5"
+            className="rounded-full bg-on-image px-8 py-3 text-sm font-medium tracking-wide text-inverse transition-transform hover:-translate-y-0.5"
           >
             메뉴 보기
           </a>
           <a
             href="#visit"
-            className="rounded-full border border-background/60 px-8 py-3 text-sm font-medium tracking-wide text-background transition-colors hover:bg-background/10"
+            className="rounded-full border border-on-image/60 px-8 py-3 text-sm font-medium tracking-wide text-on-image transition-colors hover:bg-on-image/10"
           >
             찾아오는 길
           </a>
