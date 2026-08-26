@@ -19,4 +19,14 @@ describe('Reviews', () => {
       screen.getByRole('list', { name: '네이버 방문자 리뷰 키워드' }),
     ).toBeTruthy();
   });
+
+  it('curates the three strongest review signals instead of showing every count', () => {
+    render(<Reviews />);
+
+    expect(screen.getAllByRole('listitem')).toHaveLength(3);
+    expect(screen.queryByLabelText('차분한 분위기예요 — 6명 선택')).toBeNull();
+    expect(
+      screen.getByText('친절해요 · 인테리어가 멋져요 · 대화하기 좋아요'),
+    ).toBeTruthy();
+  });
 });

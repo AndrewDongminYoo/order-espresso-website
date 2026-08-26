@@ -13,7 +13,7 @@ export function Visit() {
   return (
     <section
       id="visit"
-      className="scroll-mt-28 bg-foreground py-24 text-background md:py-32"
+      className="scroll-mt-28 bg-inverse py-24 text-inverse-foreground md:py-32"
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
@@ -21,14 +21,14 @@ export function Visit() {
             <h2 className="text-balance font-serif text-3xl font-semibold leading-snug sm:text-4xl">
               찾아오시는 길
             </h2>
-            <p className="mt-6 max-w-md text-pretty leading-relaxed text-background/70">
+            <p className="mt-6 max-w-md text-pretty leading-relaxed text-inverse-foreground/70">
               삼성중앙역 5번 출구에서 도보 3분. 강남 봉은사로의 조용한 골목,
               아이보리빛 예쁜 건물 1층에서 오더에스프레소를 만나보세요.
             </p>
 
             <dl className="mt-10 space-y-6">
-              <div className="border-t border-background/20 pt-5">
-                <dt className="text-xs uppercase tracking-widest text-background/50">
+              <div className="border-t border-inverse-foreground/20 pt-5">
+                <dt className="text-xs uppercase tracking-widest text-inverse-foreground/50">
                   Address
                 </dt>
                 <dd className="mt-2 leading-relaxed">
@@ -39,21 +39,23 @@ export function Visit() {
                     href={business.naverMap}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-background/40 px-4 py-1.5 text-xs font-medium tracking-wide text-background transition-colors hover:bg-background/10"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-inverse-foreground/40 px-4 py-1.5 text-xs font-medium tracking-wide text-inverse-foreground transition-colors hover:bg-inverse-foreground/10"
                   >
                     <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
                     네이버 지도에서 길찾기
                   </a>
                 </dd>
               </div>
-              <div className="border-t border-background/20 pt-5">
-                <dt className="text-xs uppercase tracking-widest text-background/50">
+              <div className="border-t border-inverse-foreground/20 pt-5">
+                <dt className="text-xs uppercase tracking-widest text-inverse-foreground/50">
                   Hours
                 </dt>
                 <dd className="mt-2 space-y-1">
                   {hours.map((h) => (
                     <div key={h.day} className="flex items-baseline gap-4">
-                      <span className="w-16 text-background/80">{h.day}</span>
+                      <span className="w-16 text-inverse-foreground/80">
+                        {h.day}
+                      </span>
                       <span className="tabular-nums leading-relaxed">
                         {h.time}
                       </span>
@@ -61,33 +63,33 @@ export function Visit() {
                   ))}
                 </dd>
               </div>
-              <div className="border-t border-background/20 pt-5">
-                <dt className="text-xs uppercase tracking-widest text-background/50">
+              <div className="border-t border-inverse-foreground/20 pt-5">
+                <dt className="text-xs uppercase tracking-widest text-inverse-foreground/50">
                   Directions
                 </dt>
-                <dd className="mt-2 leading-relaxed text-background/80">
+                <dd className="mt-2 leading-relaxed text-inverse-foreground/80">
                   삼성중앙역 5번 출구에서 90m 직진 후, 봉산집·삼진빌딩 골목으로
                   좌회전. GS편의점 사거리에서 우측으로 조금 내려오면 좌측
                   아이보리빛 건물입니다.
                 </dd>
               </div>
-              <div className="border-t border-background/20 pt-5">
-                <dt className="text-xs uppercase tracking-widest text-background/50">
+              <div className="border-t border-inverse-foreground/20 pt-5">
+                <dt className="text-xs uppercase tracking-widest text-inverse-foreground/50">
                   Parking
                 </dt>
-                <dd className="mt-2 leading-relaxed text-background/80">
+                <dd className="mt-2 leading-relaxed text-inverse-foreground/80">
                   매장 문 앞 2대 정도 주차 가능합니다. 가급적 대중교통 이용을
                   권장드립니다.
                 </dd>
               </div>
-              <div className="border-t border-background/20 pt-5">
-                <dt className="text-xs uppercase tracking-widest text-background/50">
+              <div className="border-t border-inverse-foreground/20 pt-5">
+                <dt className="text-xs uppercase tracking-widest text-inverse-foreground/50">
                   Contact
                 </dt>
                 <dd className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2">
                   <a
                     href="tel:0507-1415-2531"
-                    className="leading-relaxed underline decoration-background/30 underline-offset-4 transition-colors hover:text-background"
+                    className="leading-relaxed underline decoration-inverse-foreground/30 underline-offset-4 transition-colors hover:text-inverse-foreground"
                   >
                     0507-1415-2531
                   </a>
@@ -95,7 +97,7 @@ export function Visit() {
                     href="https://www.instagram.com/order_espresso.bakery"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 leading-relaxed underline decoration-background/30 underline-offset-4 transition-colors hover:text-background"
+                    className="inline-flex items-center gap-2 leading-relaxed underline decoration-inverse-foreground/30 underline-offset-4 transition-colors hover:text-inverse-foreground"
                   >
                     @order_espresso.bakery
                   </a>
@@ -103,7 +105,7 @@ export function Visit() {
                     href="https://smartstore.naver.com/highorder"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 leading-relaxed underline decoration-background/30 underline-offset-4 transition-colors hover:text-background"
+                    className="inline-flex items-center gap-2 leading-relaxed underline decoration-inverse-foreground/30 underline-offset-4 transition-colors hover:text-inverse-foreground"
                   >
                     네이버 스마트스토어
                   </a>
@@ -115,7 +117,7 @@ export function Visit() {
               {amenities.map((a) => (
                 <li
                   key={a}
-                  className="rounded-full border border-background/25 px-3 py-1 text-xs tracking-wide text-background/80"
+                  className="rounded-full border border-inverse-foreground/25 px-3 py-1 text-xs tracking-wide text-inverse-foreground/80"
                 >
                   {a}
                 </li>

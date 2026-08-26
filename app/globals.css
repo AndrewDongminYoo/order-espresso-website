@@ -38,6 +38,9 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-on-image: var(--on-image);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-inverse: var(--inverse);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -70,6 +73,9 @@
   --border: oklch(0.86 0.03 82);
   --input: oklch(0.86 0.03 82);
   --ring: oklch(0.52 0.08 55);
+  --on-image: oklch(0.96 0.02 85);
+  --inverse: oklch(0.28 0.05 262);
+  --inverse-foreground: oklch(0.96 0.02 85);
   --chart-1: oklch(0.52 0.08 55);
   --chart-2: oklch(0.28 0.05 262);
   --chart-3: oklch(0.62 0.07 60);
@@ -86,12 +92,51 @@
   --sidebar-ring: oklch(0.52 0.08 55);
 }
 
+[data-ambient='after-hours'] {
+  color-scheme: dark;
+  --background: oklch(0.13 0.02 258);
+  --foreground: oklch(0.92 0.025 84);
+  --card: oklch(0.18 0.025 256);
+  --card-foreground: oklch(0.92 0.025 84);
+  --popover: oklch(0.18 0.025 256);
+  --popover-foreground: oklch(0.92 0.025 84);
+  --primary: oklch(0.76 0.09 68);
+  --primary-foreground: oklch(0.13 0.02 258);
+  --secondary: oklch(0.16 0.025 252);
+  --secondary-foreground: oklch(0.92 0.025 84);
+  --muted: oklch(0.2 0.02 252);
+  --muted-foreground: oklch(0.72 0.025 82);
+  --accent: oklch(0.76 0.09 68);
+  --accent-foreground: oklch(0.13 0.02 258);
+  --border: oklch(0.28 0.025 252);
+  --input: oklch(0.28 0.025 252);
+  --ring: oklch(0.76 0.09 68);
+  --inverse: oklch(0.18 0.025 256);
+  --inverse-foreground: oklch(0.92 0.025 84);
+  --sidebar: oklch(0.13 0.02 258);
+  --sidebar-foreground: oklch(0.92 0.025 84);
+  --sidebar-primary: oklch(0.76 0.09 68);
+  --sidebar-primary-foreground: oklch(0.13 0.02 258);
+  --sidebar-accent: oklch(0.76 0.09 68);
+  --sidebar-accent-foreground: oklch(0.13 0.02 258);
+  --sidebar-border: oklch(0.28 0.025 252);
+  --sidebar-ring: oklch(0.76 0.09 68);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  body,
+  header,
+  main > section,
+  footer {
+    transition-property: background-color, border-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
   }
   /* Visible keyboard-focus indicator for all interactive elements. */
   a:focus-visible,
@@ -102,6 +147,69 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+[data-ambient='after-hours'] .ambient-hero-image {
+  filter: brightness(0.55) saturate(0.72) contrast(1.05);
+}
+
+[data-ambient='after-hours'] .ambient-hero-overlay {
+  background-color: oklch(0.055 0.018 258 / 0.64);
+}
+
+.ambient-hero-light-map {
+  background:
+    radial-gradient(
+      ellipse 20% 5% at 74% 84%,
+      oklch(0.82 0.018 85 / 0.11) 0%,
+      oklch(0.7 0.016 82 / 0.04) 40%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 14% 8% at 38% 49%,
+      oklch(0.82 0.012 85 / 0.08) 0%,
+      transparent 70%
+    ),
+    linear-gradient(90deg, oklch(0.62 0.055 242 / 0.06) 0%, transparent 10%);
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
+
+[data-ambient='after-hours'] .ambient-hero-light-map {
+  opacity: 1;
+}
+
+.ambient-hero-mirror-light {
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 700ms ease-out;
+}
+
+.ambient-hero-mirror-halo,
+.ambient-hero-mirror-ring {
+  fill: none;
+}
+
+.ambient-hero-mirror-spill {
+  fill: oklch(0.68 0.14 48 / 0.13);
+  filter: blur(38px);
+}
+
+.ambient-hero-mirror-halo {
+  stroke: oklch(0.74 0.16 55 / 0.38);
+  stroke-width: 16;
+  filter: blur(7px);
+}
+
+.ambient-hero-mirror-ring {
+  stroke: oklch(0.86 0.14 65 / 0.98);
+  stroke-width: 8;
+  filter: drop-shadow(0 0 3px oklch(0.78 0.16 55 / 0.72))
+    drop-shadow(0 0 10px oklch(0.7 0.15 50 / 0.38));
+}
+
+[data-ambient='after-hours'] .ambient-hero-mirror-light {
+  opacity: 1;
 }
 
 /* Respect users who prefer reduced motion. */

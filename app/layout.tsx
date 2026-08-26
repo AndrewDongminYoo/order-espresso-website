@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata, Viewport } from 'next';
 import { Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google';
+import { createAmbientInitializationScript } from '@/lib/ambient-mode';
 import { business, openingHours, siteUrl } from '@/lib/site';
 import './globals.css';
 
@@ -130,8 +131,20 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
+      data-ambient="open"
+      data-ambient-preference="auto"
+      suppressHydrationWarning
       className={`${notoSerifKR.variable} ${notoSansKR.variable} bg-background`}
     >
+      <head>
+        <script
+          id="ambient-mode"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: createAmbientInitializationScript(),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"
@@ -141,7 +154,7 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="sr-only rounded-sm bg-foreground px-4 py-2 text-sm font-medium text-background focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
+          className="sr-only rounded-sm bg-inverse px-4 py-2 text-sm font-medium text-inverse-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
         >
           본문으로 건너뛰기
         </a>
