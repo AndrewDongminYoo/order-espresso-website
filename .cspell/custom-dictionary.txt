@@ -6,7 +6,10 @@ Conpanna
 Earlgray
 Frappuccino
 Gangnam
+GHSA
 hono
+jungang
+libvips
 Maccha
 Macchiato
 Milktea
@@ -21,4 +24,3 @@ Razberry
 Rooibos
 Samseong
 shadcn
-jungang
