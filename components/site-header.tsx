@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { AmbientModeControl } from '@/components/ambient-mode-control';
 
 const links = [
   { href: '#story', label: 'Story' },
@@ -54,7 +53,7 @@ export function SiteHeader() {
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-x-4 px-6 py-2 md:grid-cols-[auto_1fr_auto] md:py-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-4 px-6 py-2 md:grid-cols-[auto_1fr] md:py-3">
         <a href="#top" className="flex min-h-11 items-center gap-3">
           <Image
             src="/images/logo.png"
@@ -74,7 +73,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="주요 섹션"
-          className="col-span-2 row-start-2 flex flex-wrap items-center justify-center gap-x-1 md:col-span-1 md:col-start-2 md:row-start-1 md:gap-2"
+          className="row-start-2 flex flex-wrap items-center justify-center gap-x-1 md:col-start-2 md:row-start-1 md:gap-2"
         >
           {links.map((link) => {
             const isActive = activeId === link.href;
@@ -98,10 +97,6 @@ export function SiteHeader() {
             );
           })}
         </nav>
-
-        <div className="col-start-2 row-start-1 md:col-start-3">
-          <AmbientModeControl />
-        </div>
       </div>
     </header>
   );

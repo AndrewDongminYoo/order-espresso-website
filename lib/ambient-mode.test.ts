@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
-  ambientStorageKey,
   createAmbientInitializationScript,
   getAutomaticAmbientMode,
   resolveAmbientMode,
@@ -38,25 +37,14 @@ describe('ambient mode', () => {
     expect(resolveAmbientMode('auto', afterClosing)).toBe('after-hours');
   });
 
-  it('applies a saved manual preference before React hydrates', () => {
-    localStorage.setItem(ambientStorageKey, 'after-hours');
-
-    window.eval(createAmbientInitializationScript());
-
-    expect(document.documentElement.dataset.ambient).toBe('after-hours');
-    expect(document.documentElement.dataset.ambientPreference).toBe(
-      'after-hours',
-    );
-  });
-
-  it('falls back to the automatic mode for an invalid saved preference', () => {
+  it('starts in automatic mode even when a legacy manual preference exists', () => {
     vi.useFakeTimers();
-    vi.setSystemTime(new Date('2026-08-24T22:00:00+09:00'));
-    localStorage.setItem(ambientStorageKey, 'sepia');
+    vi.setSystemTime(new Date('2026-08-24T09:00:00+09:00'));
+    localStorage.setItem('order-espresso-ambient-preference', 'after-hours');
 
     window.eval(createAmbientInitializationScript());
 
-    expect(document.documentElement.dataset.ambient).toBe('after-hours');
+    expect(document.documentElement.dataset.ambient).toBe('open');
     expect(document.documentElement.dataset.ambientPreference).toBe('auto');
   });
 });

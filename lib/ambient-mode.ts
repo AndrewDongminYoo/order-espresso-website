@@ -3,7 +3,6 @@ import { openingHours } from '@/lib/site';
 export type AmbientMode = 'open' | 'after-hours';
 export type AmbientPreference = 'auto' | AmbientMode;
 
-export const ambientStorageKey = 'order-espresso-ambient-preference';
 export const ambientTimeZone = 'Asia/Seoul';
 
 const seoulClock = new Intl.DateTimeFormat('en-US', {
@@ -24,16 +23,6 @@ export function createAmbientInitializationScript() {
 
   return `(() => {
     const root = document.documentElement;
-    const validPreferences = new Set(['auto', 'open', 'after-hours']);
-    let preference = 'auto';
-
-    try {
-      const savedPreference = localStorage.getItem('${ambientStorageKey}');
-      if (savedPreference && validPreferences.has(savedPreference)) {
-        preference = savedPreference;
-      }
-    } catch {}
-
     const parts = new Intl.DateTimeFormat('en-US', {
       timeZone: '${ambientTimeZone}',
       weekday: 'long',
@@ -55,8 +44,8 @@ export function createAmbientInitializationScript() {
         ? 'open'
         : 'after-hours';
 
-    root.dataset.ambientPreference = preference;
-    root.dataset.ambient = preference === 'auto' ? automaticMode : preference;
+    root.dataset.ambientPreference = 'auto';
+    root.dataset.ambient = automaticMode;
   })();`;
 }
 

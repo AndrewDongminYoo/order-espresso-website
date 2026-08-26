@@ -8,13 +8,57 @@ export function Hero() {
     >
       <Image
         src="/images/hero-interior.webp"
-        alt="아침 햇살이 스며드는 오더에스프레소 매장 내부"
+        alt="오더에스프레소 매장 내부"
         fill
         priority
         sizes="100vw"
-        className="ambient-hero-image object-cover transition-[filter,transform] duration-500 ease-out"
+        className="ambient-hero-image object-cover transition-[filter] duration-500 ease-out"
       />
       <div className="ambient-hero-overlay absolute inset-0 bg-inverse/45 transition-colors duration-300 ease-out" />
+      <div
+        aria-hidden="true"
+        className="ambient-hero-light-map pointer-events-none absolute inset-0"
+      />
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 720 900"
+        preserveAspectRatio="xMidYMid slice"
+        className="ambient-hero-mirror-light pointer-events-none absolute inset-0 h-full w-full"
+      >
+        <defs>
+          <mask id="ambient-hero-mirror-occlusion" maskUnits="userSpaceOnUse">
+            <rect width="720" height="900" fill="white" />
+            <path
+              d="M0 306h150c28 17 50 38 54 54 4 18-28 28-86 21H0z"
+              fill="black"
+            />
+          </mask>
+        </defs>
+        <ellipse
+          className="ambient-hero-mirror-spill"
+          cx="226"
+          cy="410"
+          rx="130"
+          ry="145"
+        />
+        <g mask="url(#ambient-hero-mirror-occlusion)">
+          <ellipse
+            className="ambient-hero-mirror-halo"
+            cx="226"
+            cy="410"
+            rx="94"
+            ry="94"
+          />
+          <ellipse
+            className="ambient-hero-mirror-ring"
+            cx="226"
+            cy="410"
+            rx="94"
+            ry="94"
+          />
+        </g>
+      </svg>
 
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 text-center text-on-image">
         <span className="mb-6 text-xs font-medium uppercase tracking-[0.5em] text-on-image/80">

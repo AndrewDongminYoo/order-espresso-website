@@ -94,31 +94,33 @@
 
 [data-ambient='after-hours'] {
   color-scheme: dark;
-  --background: oklch(0.18 0.025 258);
+  --background: oklch(0.13 0.02 258);
   --foreground: oklch(0.92 0.025 84);
-  --card: oklch(0.22 0.028 256);
+  --card: oklch(0.18 0.025 256);
   --card-foreground: oklch(0.92 0.025 84);
-  --popover: oklch(0.22 0.028 256);
+  --popover: oklch(0.18 0.025 256);
   --popover-foreground: oklch(0.92 0.025 84);
-  --primary: oklch(0.72 0.08 62);
-  --primary-foreground: oklch(0.16 0.02 258);
-  --secondary: oklch(0.24 0.025 252);
+  --primary: oklch(0.76 0.09 68);
+  --primary-foreground: oklch(0.13 0.02 258);
+  --secondary: oklch(0.16 0.025 252);
   --secondary-foreground: oklch(0.92 0.025 84);
-  --muted: oklch(0.25 0.02 252);
+  --muted: oklch(0.2 0.02 252);
   --muted-foreground: oklch(0.72 0.025 82);
-  --accent: oklch(0.72 0.08 62);
-  --accent-foreground: oklch(0.16 0.02 258);
-  --border: oklch(0.34 0.025 252);
-  --input: oklch(0.34 0.025 252);
-  --ring: oklch(0.72 0.08 62);
-  --sidebar: oklch(0.18 0.025 258);
+  --accent: oklch(0.76 0.09 68);
+  --accent-foreground: oklch(0.13 0.02 258);
+  --border: oklch(0.28 0.025 252);
+  --input: oklch(0.28 0.025 252);
+  --ring: oklch(0.76 0.09 68);
+  --inverse: oklch(0.18 0.025 256);
+  --inverse-foreground: oklch(0.92 0.025 84);
+  --sidebar: oklch(0.13 0.02 258);
   --sidebar-foreground: oklch(0.92 0.025 84);
-  --sidebar-primary: oklch(0.72 0.08 62);
-  --sidebar-primary-foreground: oklch(0.16 0.02 258);
-  --sidebar-accent: oklch(0.72 0.08 62);
-  --sidebar-accent-foreground: oklch(0.16 0.02 258);
-  --sidebar-border: oklch(0.34 0.025 252);
-  --sidebar-ring: oklch(0.72 0.08 62);
+  --sidebar-primary: oklch(0.76 0.09 68);
+  --sidebar-primary-foreground: oklch(0.13 0.02 258);
+  --sidebar-accent: oklch(0.76 0.09 68);
+  --sidebar-accent-foreground: oklch(0.13 0.02 258);
+  --sidebar-border: oklch(0.28 0.025 252);
+  --sidebar-ring: oklch(0.76 0.09 68);
 }
 
 @layer base {
@@ -148,12 +150,66 @@
 }
 
 [data-ambient='after-hours'] .ambient-hero-image {
-  filter: brightness(0.58) saturate(0.72) contrast(1.06) sepia(0.12);
-  transform: scale(1.01);
+  filter: brightness(0.55) saturate(0.72) contrast(1.05);
 }
 
 [data-ambient='after-hours'] .ambient-hero-overlay {
-  background-color: oklch(0.1 0.02 258 / 0.28);
+  background-color: oklch(0.055 0.018 258 / 0.64);
+}
+
+.ambient-hero-light-map {
+  background:
+    radial-gradient(
+      ellipse 20% 5% at 74% 84%,
+      oklch(0.82 0.018 85 / 0.11) 0%,
+      oklch(0.7 0.016 82 / 0.04) 40%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 14% 8% at 38% 49%,
+      oklch(0.82 0.012 85 / 0.08) 0%,
+      transparent 70%
+    ),
+    linear-gradient(90deg, oklch(0.62 0.055 242 / 0.06) 0%, transparent 10%);
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
+
+[data-ambient='after-hours'] .ambient-hero-light-map {
+  opacity: 1;
+}
+
+.ambient-hero-mirror-light {
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 700ms ease-out;
+}
+
+.ambient-hero-mirror-halo,
+.ambient-hero-mirror-ring {
+  fill: none;
+}
+
+.ambient-hero-mirror-spill {
+  fill: oklch(0.68 0.14 48 / 0.13);
+  filter: blur(38px);
+}
+
+.ambient-hero-mirror-halo {
+  stroke: oklch(0.74 0.16 55 / 0.38);
+  stroke-width: 16;
+  filter: blur(7px);
+}
+
+.ambient-hero-mirror-ring {
+  stroke: oklch(0.86 0.14 65 / 0.98);
+  stroke-width: 8;
+  filter: drop-shadow(0 0 3px oklch(0.78 0.16 55 / 0.72))
+    drop-shadow(0 0 10px oklch(0.7 0.15 50 / 0.38));
+}
+
+[data-ambient='after-hours'] .ambient-hero-mirror-light {
+  opacity: 1;
 }
 
 /* Respect users who prefer reduced motion. */

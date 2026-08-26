@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { AmbientModeControl } from '@/components/ambient-mode-control';
 
 export function SiteFooter() {
   return (
@@ -38,6 +39,12 @@ export function SiteFooter() {
           >
             네이버 스마트스토어
           </a>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-[0.6875rem] tracking-[0.16em] text-muted-foreground">
+            매장 조명
+          </span>
+          <AmbientModeControl />
         </div>
         <p className="mt-4 text-xs tracking-wide text-muted-foreground">
           © {new Date().getFullYear()} ORDER ESPRESSO. All rights reserved.

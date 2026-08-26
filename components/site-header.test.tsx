@@ -38,10 +38,12 @@ describe('SiteHeader', () => {
     expect(storeLink.getAttribute('href')).toBe('#store');
   });
 
-  it('exposes the ambient mode control and touch-sized navigation links', () => {
+  it('keeps the ambient control out of the header and preserves touch-sized navigation links', () => {
     render(<SiteHeader />);
 
-    expect(screen.getByRole('combobox', { name: '화면 분위기' })).toBeTruthy();
+    expect(
+      screen.queryByRole('combobox', { name: '매장 조명 상태' }),
+    ).toBeNull();
     expect(screen.getByRole('link', { name: 'Story' }).className).toContain(
       'min-h-11',
     );
