@@ -1,6 +1,7 @@
 version: '0.2'
 ignorePaths:
   - pnpm-lock.yaml
+  - pnpm-workspace.yaml
   - '*.tsbuildinfo'
 dictionaryDefinitions:
   - name: custom-dictionary
@@ -8,6 +9,6 @@ dictionaryDefinitions:
     addWords: true
 dictionaries:
   - custom-dictionary
-words: []
+words: [vercel]
 ignoreWords: []
 import: []
