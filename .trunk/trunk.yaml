@@ -22,6 +22,7 @@ lint:
   disabled:
     - dotenv-linter
     - oxipng
+    - svgo
   enabled:
     - pinact@4.1.1:
         commands: [lint, upgrade]
