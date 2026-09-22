@@ -36,7 +36,6 @@ lint:
     - prettier@3.9.6:
         packages:
           - prettier-plugin-tailwindcss@0.8.1
-    - svgo@4.1.0
     - trufflehog@3.97.1
     - yamllint@1.38.0
 actions:
