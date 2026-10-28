@@ -24,16 +24,17 @@ lint:
     - grype
     - oxipng
     - svgo
+    - taplo
   enabled:
-    - pinact@4.1.1:
-        commands: [lint, upgrade]
     - actionlint@1.7.12
-    - eslint@10.12.0
-    - checkov@3.3.27
-    - cspell@10.3.6
+    - checkov@3.3.30
+    - cspell@10.4.0
+    - eslint@10.13.0
     - git-diff-check
-    - markdownlint@0.49.1
+    - markdownlint@0.50.0
     - osv-scanner@2.7.0
+    - pinact@4.1.1!:
+        commands: [lint, upgrade]
     - prettier@3.9.10:
         packages:
           - prettier-plugin-tailwindcss@0.8.1
