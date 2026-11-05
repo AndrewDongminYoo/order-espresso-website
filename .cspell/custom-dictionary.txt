@@ -3,10 +3,12 @@ Affogato
 Choco
 Coldbrew
 Conpanna
+deepmerge
 dotenv
 Earlgray
 Frappuccino
 Gangnam
+gcqx
 GHSA
 hono
 jungang
@@ -26,3 +28,4 @@ Rooibos
 Samseong
 shadcn
 taplo
+Vulns
