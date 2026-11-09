@@ -17,7 +17,7 @@
     "@vercel/analytics": "2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.69.0",
+    "lucide-react": "^1.70.0",
     "next": "16.4.5",
     "react": "19.3.1",
     "react-dom": "19.3.1",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^26.6.6",
     "@types/react": "19.3.0",
@@ -40,7 +40,7 @@
     "postcss": "^8.5.32",
     "prettier": "3.9.10",
     "sharp": "^0.35.5",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "typescript": "6.0.3",
     "typescript-eslint": "^8.72.1",
     "vitest": "^5.1.0"
